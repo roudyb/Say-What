@@ -1,0 +1,56 @@
+{
+    "data" : {
+                "mark":      {
+                                "name": "Mark Twain",
+                                "url": "http://www.menssuitstips.com/wp-content/uploads/2014/11/Mark-Twain-1896-white-suit.jpg",
+                                "quote": "Get your facts first, then you can distort them as you please."
+                            },
+                "groucho":  {
+                                "name": "Groucho Marx",
+                                "url": "http://cdn-vps.osijek031.com/slike/novosti_2009_03/2009_03_01_strip_recenzija_groucho_marx8.gif",
+                                "quote": "I refuse to join any club that would have me as a member."
+                            },
+                "patton":   {
+                                "name": "George Patton",
+                                "url": "http://i3.cpcache.com/product/574147152/general_patton.jpg?height=400&width=400&qv=90&AttributeValue=Poster&Size=24x17",
+                                "quote": "May God have mercy upon my enemies, because I won't."
+                            },
+                "frida":    {
+                                "name": "Frida Kahlo",
+                                "url": "http://fe867b.medialib.glogster.com/media/51/51226ca1190379bcf2e12bd063950a460247ab132aae1949546bf2a8bd529289/frida-kahlo-jpg.jpg",
+                                "quote": "I drank to drown my sorrows, but the damned things learned how to swim."
+                            },
+                "abe":      {
+                                "name": "Abraham Lincoln",
+                                "url": "http://img.deseretnews.com/images/top/main/24013/24013.jpg",
+                                "quote": "Nearly all men can stand adversity, but if you want to test a man's character, give him power."
+                            },
+                "love":     {
+                                "name": "H. P. Lovecraft",
+                                "url": "https://pbs.twimg.com/profile_images/378800000855107446/931ccbb34cfdbdeef990f21c114e78b7_400x400.png",
+                                "quote": "The world is indeed comic, but the joke is on mankind."
+                            },
+                "leo":      {
+                                "name": "Leo Tolstoy",
+                                "url": "https://pbs.twimg.com/profile_images/481465560773836800/NZb7Lxtf_400x400.jpeg",
+                                "quote": "It is amazing how complete is the delusion that beauty is goodness."
+                            },
+                "jim":      {
+                                "name": "Jim Carrey",
+                                "url": "http://images2.fanpop.com/images/photos/6600000/ace-ace-ventura-6606086-304-400.jpg",
+                                "quote": "You know the trouble with real life? There's no danger music."
+                            },
+                "quentin":  {
+                                "name": "Quentin Tarantino",
+                                "url": "https://pbs.twimg.com/profile_images/488836480081461248/mHvoSW7j_400x400.jpeg",
+                                "quote": "Dogs got personality. Personality goes a long way."
+                            },
+                "zach":     {
+                                "name": "Zachary Galifianakis",
+                                "url": "https://pbs.twimg.com/profile_images/1378267676/image_400x400.jpg",
+                                "quote": "I would start a revolution, but I just bought a hammock."
+                            }                           
+
+            }               
+}
+

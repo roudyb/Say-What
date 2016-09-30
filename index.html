@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  
+    <!--
+        * Author: Roudy Courser
+        * Assignment: WE41 Mobile Web Applications, Digital Skills Academy
+        * Student ID: D15128554
+        * Date : 2016/17/03
+        * Ref:   http://www.w3schools.com/jquerymobile/jquerymobile_panels.asp
+                 How to Parse a JSON file using jQuery - http://code.runnable.com/UhY_jE3QH-IlAAAP/how-to-parse-a-json-file-using-jquery
+    -->
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <!-- Bootstrap CSS -->
+    <!--<link href="css/bootstrap.css" rel="stylesheet" media="screen">-->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+  </head>
+
+  <style type="text/css">
+    
+  </style>
+
+<body>
+
+<!-- PAGE ONE -->
+<div data-role="page" id="pageone" align="center">
+  <!-- side panel -->
+  <div data-role="panel" id="overlayPanel" data-display="overlay" style="background-color:#d8d8d8">
+    
+    <img src="images/dare.png">
+    <h4>Don't Waste Your Time Here.</h4> <p>Get searching for your favourite celeb and see what they have to say. Good or bad.</p>
+    <a href="#pageone" data-rel="close" class="ui-btn ui-btn-inline ui-shadow ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-left">Close panel</a>
+  </div>
+
+  <div data-role="header" style="background-color: white;">
+    <img src="images/logo.jpg">
+  </div>
+
+  <div data-role="main" class="ui-content padding-100" style="height: 300px;">
+    <p>Enter a letter and choose a celebrity to see what they have to say. <strong>Say What?</strong></p>
+    <a href="#overlayPanel" class="ui-btn ui-btn-inline ui-corner-all ui-shadow">I Double Dare You</a>
+  
+      <div class="container-fluid" style="padding: 0px; display: inline-block; vertical-align: top;">
+        <div class="row-fluid">
+          
+          <div class="col-md-6 column-bg-color text-col-white padding-100">
+            <div class="content-primary">
+
+              <div data-demo-html="true">
+                <ul data-role="listview" data-filter="true" data-filter-reveal="true">
+                  <li><a href="#mark" data-transition="flip">Mark Twain</a></li>
+                  <li><a href="#groucho" data-transition="flip">Groucho Marx</a></li>
+                  <li><a href="#patton" data-transition="flip">George Patton</a></li>
+                  <li><a href="#frida" data-transition="flip">Frida Kahlo</a></li>
+                  <li><a href="#abe" data-transition="flip">Abraham Lincoln</a></li>
+                  <li><a href="#love" data-transition="flip">H. P. Lovecraft</a></li>
+                  <li><a href="#leo" data-transition="flip">Leo Tolstoy</a></li>
+                  <li><a href="#jim" data-transition="flip">Jim Carrey</a></li>
+                  <li><a href="#quentin" data-transition="flip">Quentin Tarantino</a></li>
+                  <li><a href="#zach" data-transition="flip">Zachary Galifianakis</a></li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </div>
+  
+  </div>
+  </div>
+
+  <div data-role="footer" style="height:180px; background-color:#efce13;">
+      <img src="images/royale.png">
+  </div>
+
+</div>
+
+<!-- SEARCH PAGE RESULTS -->
+
+<!--Mark Twain -->
+<div data-role="page" class="ui-btn ui-btn-inline ui-corner-all ui-shadow" id="mark" align="center">
+<div id="results"></div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+    <script>
+
+        //Attach click event to button
+        $(document).ready(function() {
+            
+            //after button is clicked we download the data
+            $('.ui-btn').click(function(){
+
+                //start ajax request
+                $.ajax({
+                    url: "js/data.json",
+                    //force to handle it as text
+                    dataType: "text",
+                    success: function(data) {
+                        
+                        //data downloaded so we call parseJSON function 
+                        //and pass downloaded data
+                        var json = $.parseJSON(data);
+                        //now json variable contains data in json format
+                        //let's display a few items
+                        $('#results').html('<br /><img src="' + json.data.mark.url + '"><br />' + json.data.mark.quote + '<br />');
+                    }
+                });
+            });
+        });
+    </script>
+
+<a href="#pageone" class="ui-btn ui-btn-inline ui-corner-all ui-shadow">back</a>
+<br>
+</div>
+
+<!--Groucho Marx -->
+<div data-role="page" class="ui-btn ui-btn-inline ui-corner-all ui-shadow" id="groucho" align="center">
+<div id="results"></div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+
+        //Attach click event to button
+        $(document).ready(function() {
+            
+            //after button is clicked we download the data
+            $('.ui-btn').click(function(){
+
+                //start ajax request
+                $.ajax({
+                    url: "js/data.json",
+                    //force to handle it as text
+                    dataType: "text",
+                    success: function(data) {
+                        
+                        //data downloaded so we call parseJSON function 
+                        //and pass downloaded data
+                        var json = $.parseJSON(data);
+                        //now json variable contains data in json format
+                        //let's display a few items
+                        $('#results').html('<br /><img src="' + json.data.groucho.url + '"><br />' + json.data.groucho.quote + '<br />');
+                    }
+                });
+            });
+        });
+    </script>
+
+<a href="#pageone" class="ui-btn ui-btn-inline ui-corner-all ui-shadow">back</a>
+<br>
+</div>
+
+<!--George Patton -->
+<div data-role="page" class="ui-btn ui-btn-inline ui-corner-all ui-shadow" id="frida" align="center">
+<div id="results"></div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+    <script>
+
+        //Attach click event to button
+        $(document).ready(function() {
+            
+            //after button is clicked we download the data
+            $('.ui-btn').click(function(){
+
+                //start ajax request
+                $.ajax({
+                    url: "js/data.json",
+                    //force to handle it as text
+                    dataType: "text",
+                    success: function(data) {
+                        
+                        //data downloaded so we call parseJSON function 
+                        //and pass downloaded data
+                        var json = $.parseJSON(data);
+                        //now json variable contains data in json format
+                        //let's display a few items
+                        $('#results').html('<br /><img src="' + json.data.patton.url + '"><br />' + json.data.patton.quote + '<br />');
+                    }
+                });
+            });
+        });
+    </script>
+
+<a href="#pageone" class="ui-btn ui-btn-inline ui-corner-all ui-shadow">back</a>
+<br>
+</div>
+
+<!--Frida Kahlo -->
+<div data-role="page" class="ui-btn ui-btn-inline ui-corner-all ui-shadow" id="frida" align="center">
+<div id="results"></div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+    <script>
+
+        //Attach click event to button
+        $(document).ready(function() {
+            
+            //after button is clicked we download the data
+            $('.ui-btn').click(function(){
+
+                //start ajax request
+                $.ajax({
+                    url: "js/data.json",
+                    //force to handle it as text
+                    dataType: "text",
+                    success: function(data) {
+                        
+                        //data downloaded so we call parseJSON function 
+                        //and pass downloaded data
+                        var json = $.parseJSON(data);
+                        //now json variable contains data in json format
+                        //let's display a few items
+                        $('#results').html('<br /><img src="' + json.data.frida.url + '"><br />' + json.data.frida.quote + '<br />');
+                    }
+                });
+            });
+        });
+    </script>
+
+<a href="#pageone" class="ui-btn ui-btn-inline ui-corner-all ui-shadow">back</a>
+<br>
+</div>
+
+<!--Abraham Lincoln -->
+<div data-role="page" class="ui-btn ui-btn-inline ui-corner-all ui-shadow" id="abe" align="center">
+<div id="results"></div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+    <script>
+
+        //Attach click event to button
+        $(document).ready(function() {
+            
+            //after button is clicked we download the data
+            $('.ui-btn').click(function(){
+
+                //start ajax request
+                $.ajax({
+                    url: "js/data.json",
+                    //force to handle it as text
+                    dataType: "text",
+                    success: function(data) {
+                        
+                        //data downloaded so we call parseJSON function 
+                        //and pass downloaded data
+                        var json = $.parseJSON(data);
+                        //now json variable contains data in json format
+                        //let's display a few items
+                        $('#results').html('<br /><img src="' + json.data.abe.url + '"><br />' + json.data.abe.quote + '<br />');
+                    }
+                });
+            });
+        });
+    </script>
+
+<a href="#pageone" class="ui-btn ui-btn-inline ui-corner-all ui-shadow">back</a>
+<br>
+</div>
+
+<!--H.P. Lovecraft -->
+<div data-role="page" class="ui-btn ui-btn-inline ui-corner-all ui-shadow" id="love" align="center">
+<div id="results"></div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+    <script>
+
+        //Attach click event to button
+        $(document).ready(function() {
+            
+            //after button is clicked we download the data
+            $('.ui-btn').click(function(){
+
+                //start ajax request
+                $.ajax({
+                    url: "js/data.json",
+                    //force to handle it as text
+                    dataType: "text",
+                    success: function(data) {
+                        
+                        //data downloaded so we call parseJSON function 
+                        //and pass downloaded data
+                        var json = $.parseJSON(data);
+                        //now json variable contains data in json format
+                        //let's display a few items
+                        $('#results').html('<br /><img src="' + json.data.love.url + '"><br />' + json.data.love.quote + '<br />');
+                    }
+                });
+            });
+        });
+    </script>
+
+<a href="#pageone" class="ui-btn ui-btn-inline ui-corner-all ui-shadow">back</a>
+<br>
+</div>
+
+
+<!--Leo Tolstoy -->
+<div data-role="page" class="ui-btn ui-btn-inline ui-corner-all ui-shadow" id="leo" align="center">
+<div id="results"></div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+    <script>
+
+        //Attach click event to button
+        $(document).ready(function() {
+            
+            //after button is clicked we download the data
+            $('.ui-btn').click(function(){
+
+                //start ajax request
+                $.ajax({
+                    url: "js/data.json",
+                    //force to handle it as text
+                    dataType: "text",
+                    success: function(data) {
+                        
+                        //data downloaded so we call parseJSON function 
+                        //and pass downloaded data
+                        var json = $.parseJSON(data);
+                        //now json variable contains data in json format
+                        //let's display a few items
+                        $('#results').html('<br /><img src="' + json.data.leo.url + '"><br />' + json.data.leo.quote + '<br />');
+                    }
+                });
+            });
+        });
+    </script>
+
+<a href="#pageone" class="ui-btn ui-btn-inline ui-corner-all ui-shadow">back</a>
+<br>
+</div>
+
+<!--Jim Carrey -->
+<div data-role="page" class="ui-btn ui-btn-inline ui-corner-all ui-shadow" id="jim" align="center">
+<div id="results"></div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+    <script>
+
+        //Attach click event to button
+        $(document).ready(function() {
+            
+            //after button is clicked we download the data
+            $('.ui-btn').click(function(){
+
+                //start ajax request
+                $.ajax({
+                    url: "js/data.json",
+                    //force to handle it as text
+                    dataType: "text",
+                    success: function(data) {
+                        
+                        //data downloaded so we call parseJSON function 
+                        //and pass downloaded data
+                        var json = $.parseJSON(data);
+                        //now json variable contains data in json format
+                        //let's display a few items
+                        $('#results').html('<br /><img src="' + json.data.jim.url + '"><br />' + json.data.jim.quote + '<br />');
+                    }
+                });
+            });
+        });
+    </script>
+
+<a href="#pageone" class="ui-btn ui-btn-inline ui-corner-all ui-shadow">back</a>
+<br>
+</div>
+
+<!--Quentin Tarantino -->
+<div data-role="page" class="ui-btn ui-btn-inline ui-corner-all ui-shadow" id="quentin" align="center">
+<div id="results"></div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+    <script>
+
+        //Attach click event to button
+        $(document).ready(function() {
+            
+            //after button is clicked we download the data
+            $('.ui-btn').click(function(){
+
+                //start ajax request
+                $.ajax({
+                    url: "js/data.json",
+                    //force to handle it as text
+                    dataType: "text",
+                    success: function(data) {
+                        
+                        //data downloaded so we call parseJSON function 
+                        //and pass downloaded data
+                        var json = $.parseJSON(data);
+                        //now json variable contains data in json format
+                        //let's display a few items
+                        $('#results').html('<br /><img src="' + json.data.quentin.url + '"><br />' + json.data.quentin.quote + '<br />');
+                    }
+                });
+            });
+        });
+    </script>
+
+<a href="#pageone" class="ui-btn ui-btn-inline ui-corner-all ui-shadow">back</a>
+<br>
+</div>
+
+<!--Zachary Galifianakis -->
+<div data-role="page" class="ui-btn ui-btn-inline ui-corner-all ui-shadow" id="zach" align="center">
+<div id="results"></div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+    <script>
+
+        //Attach click event to button
+        $(document).ready(function() {
+            
+            //after button is clicked we download the data
+            $('.ui-btn').click(function(){
+
+                //start ajax request
+                $.ajax({
+                    url: "js/data.json",
+                    //force to handle it as text
+                    dataType: "text",
+                    success: function(data) {
+                        
+                        //data downloaded so we call parseJSON function 
+                        //and pass downloaded data
+                        var json = $.parseJSON(data);
+                        //now json variable contains data in json format
+                        //let's display a few items
+                        $('#results').html('<br /><img src="' + json.data.zach.url + '"><br />' + json.data.zach.quote + '<br />');
+                    }
+                });
+            });
+        });
+    </script>
+
+<a href="#pageone" class="ui-btn ui-btn-inline ui-corner-all ui-shadow">back</a>
+<br>
+</div>
+
+</div>
+
+
+</body>
+</html>
